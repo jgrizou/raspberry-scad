@@ -1,13 +1,13 @@
-RasperryPiBplusZoffset = 2;
+RaspberryPiBplusZoffset = 2;
 
-RasperryPiBplusLength = 85;
-RasperryPiBplusWidth = 56;
+RaspberryPiBplusLength = 85;
+RaspberryPiBplusWidth = 56;
 
-RasperryPiBplusJackConnectorOutter = 2.5;
+RaspberryPiBplusJackConnectorOutter = 2.5;
 
-RasperryPiBplusBetweenHolesLength = 58;
-RasperryPiBplusBetweenHolesWidth = 49;
+RaspberryPiBplusBetweenHolesLength = 58;
+RaspberryPiBplusBetweenHolesWidth = 49;
 
-RasperryPiBplusHolesDistToSide = 3.5;
+RaspberryPiBplusHolesDistToSide = 3.5;
 
-RasperryPiBplusHolesDiameter = 2.75;
+RaspberryPiBplusHolesDiameter = 2.75;

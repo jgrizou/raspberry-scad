@@ -1,28 +1,28 @@
 include <raspberry_pi_Bplus_def.scad>
 
-module add_rasperry_pi_Bplus(center=true){
+module add_raspberry_pi_Bplus(center=true){
 
   if (center==true){
-    translate([-RasperryPiBplusLength/2, -RasperryPiBplusWidth/2-RasperryPiBplusJackConnectorOutter, -RasperryPiBplusZoffset])
-      add_rasperry_pi_Bplus(center=false);
+    translate([-RaspberryPiBplusLength/2, -RaspberryPiBplusWidth/2-RaspberryPiBplusJackConnectorOutter, -RaspberryPiBplusZoffset])
+      add_raspberry_pi_Bplus(center=false);
   } else {
     import("raspberry_pi_Bplus.STL", convexity=10);
   }
 }
 
-module rasperry_pi_Bplus_hole_support(boardHeight=5, holeType="cone", center=true) {
+module raspberry_pi_Bplus_hole_support(boardHeight=5, holeType="spike", center=true) {
 
   if (center==true){
-    translate([-RasperryPiBplusLength/2, -RasperryPiBplusWidth/2, 0])
-      rasperry_pi_Bplus_hole_support(boardHeight, holeType, center=false);
+    translate([-RaspberryPiBplusLength/2, -RaspberryPiBplusWidth/2, 0])
+      raspberry_pi_Bplus_hole_support(boardHeight, holeType, center=false);
   } else {
-    translate([RasperryPiBplusHolesDistToSide, RasperryPiBplusHolesDistToSide, 0]){
+    translate([RaspberryPiBplusHolesDistToSide, RaspberryPiBplusHolesDistToSide, 0]){
       add_hole_support(boardHeight, holeType);
-      translate([RasperryPiBplusBetweenHolesLength,0,0])
+      translate([RaspberryPiBplusBetweenHolesLength,0,0])
         add_hole_support(boardHeight, holeType);
-      translate([0,RasperryPiBplusBetweenHolesWidth,0])
+      translate([0,RaspberryPiBplusBetweenHolesWidth,0])
         add_hole_support(boardHeight, holeType);
-      translate([RasperryPiBplusBetweenHolesLength,RasperryPiBplusBetweenHolesWidth,0])
+      translate([RaspberryPiBplusBetweenHolesLength,RaspberryPiBplusBetweenHolesWidth,0])
         add_hole_support(boardHeight, holeType);
     }
   }
@@ -31,7 +31,7 @@ module rasperry_pi_Bplus_hole_support(boardHeight=5, holeType="cone", center=tru
 module add_hole_support(boardHeight, holeType) {
 
   if (holeType == "cone"){
-    cylinder(h=2*boardHeight, d1=RasperryPiBplusHolesDiameter+1.25, d2=RasperryPiBplusHolesDiameter-1.25);
+    cylinder(h=2*boardHeight, d1=RaspberryPiBplusHolesDiameter+1.25, d2=RaspberryPiBplusHolesDiameter-1.25);
   }
 
   if (holeType == "screw"){
@@ -59,19 +59,19 @@ use <../robotis-scad/dynamixel/xl320.scad>
 p = 1;
 boardHeight = 5;
 if (p==1) {
-  rasperry_pi_Bplus_hole_support(boardHeight, "cone");
+  raspberry_pi_Bplus_hole_support(boardHeight, "cone");
   translate([0,0,boardHeight])
-    add_rasperry_pi_Bplus();
+    add_raspberry_pi_Bplus();
 
   translate([0, 60, 0]){
-    rasperry_pi_Bplus_hole_support(boardHeight, "screw");
+    raspberry_pi_Bplus_hole_support(boardHeight, "screw");
     translate([0,0,boardHeight])
-      add_rasperry_pi_Bplus();
+      add_raspberry_pi_Bplus();
   }
 
   translate([0, 120, 0]){
-    rasperry_pi_Bplus_hole_support(boardHeight, "spike");
+    raspberry_pi_Bplus_hole_support(boardHeight, "spike");
     translate([0,0,boardHeight])
-      add_rasperry_pi_Bplus();
+      add_raspberry_pi_Bplus();
   }
 }
