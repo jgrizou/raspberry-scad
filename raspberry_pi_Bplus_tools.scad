@@ -113,27 +113,27 @@ module add_raspberry_camera_holder(cameraHeight=5, wallThickness=1) {
   wallOverlapWithBoard = CameraPiHolesDistToSide;
 
   // height support
-  translate([0,0,boardHeight/2])
-    cube([totalLength, totalWidth, boardHeight], center=true);
+  translate([0,0,cameraHeight/2])
+    cube([totalLength, totalWidth, cameraHeight], center=true);
 
   // right side
-  translate([totalLength/2-wallThickness/2,0,boardHeight+wallHeight/2])
+  translate([totalLength/2-wallThickness/2,0,cameraHeight+wallHeight/2])
     cube([wallThickness, totalWidth, wallHeight], center=true);
 
-  translate([CameraPiWidth/2-wallOverlapWithBoard/2+CameraPiBplusThicknessTolerance/2,-totalWidth/2+wallThickness/2,boardHeight+wallHeight/2])
+  translate([CameraPiWidth/2-wallOverlapWithBoard/2+CameraPiBplusThicknessTolerance/2,-totalWidth/2+wallThickness/2,cameraHeight+wallHeight/2])
     cube([wallOverlapWithBoard+CameraPiBplusThicknessTolerance, wallThickness, wallHeight], center=true);
 
-  translate([CameraPiWidth/2-wallOverlapWithBoard/2+CameraPiBplusThicknessTolerance/2,totalWidth/2-wallThickness/2,boardHeight+wallHeight/2])
+  translate([CameraPiWidth/2-wallOverlapWithBoard/2+CameraPiBplusThicknessTolerance/2,totalWidth/2-wallThickness/2,cameraHeight+wallHeight/2])
     cube([wallOverlapWithBoard+CameraPiBplusThicknessTolerance, wallThickness, wallHeight], center=true);
 
   // left side
-  translate([-totalLength/2+wallThickness/2,0,boardHeight+wallHeight/2])
+  translate([-totalLength/2+wallThickness/2,0,cameraHeight+wallHeight/2])
     cube([wallThickness, totalWidth, wallHeight], center=true);
 
-  translate([-CameraPiWidth/2+wallOverlapWithBoard/2-CameraPiBplusThicknessTolerance/2,-totalWidth/2+wallThickness/2,boardHeight+wallHeight/2])
+  translate([-CameraPiWidth/2+wallOverlapWithBoard/2-CameraPiBplusThicknessTolerance/2,-totalWidth/2+wallThickness/2,cameraHeight+wallHeight/2])
     cube([wallOverlapWithBoard+CameraPiBplusThicknessTolerance, wallThickness, wallHeight], center=true);
 
-  translate([-CameraPiWidth/2+wallOverlapWithBoard/2-CameraPiBplusThicknessTolerance/2,totalWidth/2-wallThickness/2,boardHeight+wallHeight/2])
+  translate([-CameraPiWidth/2+wallOverlapWithBoard/2-CameraPiBplusThicknessTolerance/2,totalWidth/2-wallThickness/2,cameraHeight+wallHeight/2])
     cube([wallOverlapWithBoard+CameraPiBplusThicknessTolerance, wallThickness, wallHeight], center=true);
 }
 
