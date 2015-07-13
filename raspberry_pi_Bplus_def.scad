@@ -17,6 +17,7 @@ RaspberryPiBplusHolesDiameter = 2.75;
 RaspberryPiBplusScrewDiameter = 2.5;
 RaspberryPiBplusHoleOuterSupportDiameter = 6;
 
+RaspberryPiBplusBoardHeight = 5;
 
 CameraPiWidth = 25;
 CameraPiLength = 24;

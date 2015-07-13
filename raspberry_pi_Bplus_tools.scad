@@ -24,7 +24,7 @@ module add_vertical_raspberry_pi_Bplus(center=true){
 }
 
 
-module raspberry_pi_Bplus_hole_support(boardHeight=5, holeType="spike", center=true) {
+module raspberry_pi_Bplus_hole_support(boardHeight=RaspberryPiBplusBoardHeight, holeType="spike", center=true) {
 
   if (center==true){
     translate([-RaspberryPiBplusLength/2, -RaspberryPiBplusWidth/2, 0])
