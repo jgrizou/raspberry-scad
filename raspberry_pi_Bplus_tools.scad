@@ -60,6 +60,10 @@ module add_hole_support(boardHeight, holeType) {
     cylinder(h=boardHeight+5, d=RaspberryPiBplusScrewDiameter);
   }
 
+  if (holeType == "hole"){
+    cylinder(h=boardHeight, d=RaspberryPiBplusScrewDiameter);
+  }
+
 }
 
 module add_side_support(boardHeight=5, wallThickness=2) {
