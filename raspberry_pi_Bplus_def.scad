@@ -7,6 +7,7 @@ RaspberryPiBplusThickness = 1.2;
 RaspberryPiBplusThicknessTolerance = 0.3;
 
 RaspberryPiBplusJackConnectorOutter = 2.5;
+RaspberryPiBplusSDCardOutter = 3;
 
 RaspberryPiBplusBetweenHolesLength = 58;
 RaspberryPiBplusBetweenHolesWidth = 49;
